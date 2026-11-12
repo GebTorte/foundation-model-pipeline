@@ -48,3 +48,20 @@ ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize crit
 > git clone
 
 ### add thor.py file to pangea/encoders to interface THOR framework
+- gpt did well ?!?
+
+### TODO install thor into 
+THOR repo not available in the current Python environment; using a compatibility adapter. Install the THOR package or add the repo to PYTHONPATH. Original error: No module named 'thor'
+> cd THOR
+#### installing THOR to the venv
+> uv pip install . 
+
+
+## Pytest
+run pytest in root project directory once to test everything working
+> cd $FOUNDATION-MODEL-DIRECTORY
+> pytest
+
+### NOTE
+- will fail on datasets that cant be automatically downloaded
+- >module load gcc
