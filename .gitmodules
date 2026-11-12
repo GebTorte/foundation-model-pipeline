@@ -1,0 +1,6 @@
+[submodule "pangea/pangaea-bench"]
+	path = pangea/pangaea-bench
+	url = https://github.com/GebTorte/pangaea-bench.git
+[submodule "thor/THOR"]
+	path = thor/THOR
+	url = https://github.com/GebTorte/THOR.git
