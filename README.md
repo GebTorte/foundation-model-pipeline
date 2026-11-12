@@ -10,8 +10,6 @@ Project: Foundation Model Pipeline
 > uv venv
 > uv add -r pangea/pangea-bench/requirements.txt
 
-## add more
-> uv add huggingface # will supply `hf` on cmd?
 
 ### Notes
 - export UV_HTTP_TIMEOUT=60
@@ -20,13 +18,33 @@ Project: Foundation Model Pipeline
 ### later just sync with given pyproject.toml and uv.lock file
 > uv sync
 
+### activate venv
+> source .venv/bin/activate
+
 ## Pangea
 > git clone https://github.com/VMarsocci/pangaea-bench.git
 
 
+
+### build as package
+> cd pangea-bench
+> uv pip install --no-build-isolation --no-deps -e .
+
 ### datasets
 - pastis-r: supplied automatically via pangea
-- biomassters: supplied via Huggingface. TODO!! (ca. 200GB -> leave for proper )
+OR 
+    > hf download IGNF/PASTIS-HD --repo-type dataset
+- biomassters: supplied via Huggingface. TODO [ ] (ca. 200GB -> leave for proper )
     > hf download nascetti-a/BioMassters --repo-type dataset
 
+### test run
+> torchrun --nnodes=2 --nproc_per_node=1 pangea/run.py --config-name=train dataset=croptypemappi
+ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
 
+### test pastis TODO [ ]
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=pastis encoder=remoteclip decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task.evaluator.inference_mode=whole task=segmentation
+
+## THOR
+> git clone
+
+### add thor.py file to pangea/encoders to interface THOR framework
