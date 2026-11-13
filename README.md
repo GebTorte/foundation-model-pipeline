@@ -52,9 +52,17 @@ ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize crit
 
 ### TODO install thor into 
 THOR repo not available in the current Python environment; using a compatibility adapter. Install the THOR package or add the repo to PYTHONPATH. Original error: No module named 'thor'
-> cd THOR
+
 #### installing THOR to the venv
+> cd THOR
 > uv pip install . 
+
+### Dataset support
+#### Thor dataset V2
+"S2-10m",
+"S2-20m",
+"S2-60m",
+"S1-10m",
 
 
 ## Pytest
@@ -63,5 +71,5 @@ run pytest in root project directory once to test everything working
 > pytest
 
 ### NOTE
-- will fail on datasets that cant be automatically downloaded
-- >module load gcc
+- will fail on datasets that cant be automatically downloaded?!
+- > module load gcc
