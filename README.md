@@ -82,5 +82,10 @@ run pytest in root project directory once to test everything working
 
 > git submodule foreach "uv pip install --no-build-isolation --no-deps -e ."
 
+## UV version (not tested)
+> git clone https...fmp.git
+> uv add git+https://github.com/GebTorte/THOR.git
+> uv add "pangaea @ git+https://github.com/GebTorte/pangaea-bench.git"
 
+Let uv handle everything.
 
