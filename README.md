@@ -73,3 +73,14 @@ run pytest in root project directory once to test everything working
 ### NOTE
 - will fail on datasets that cant be automatically downloaded?!
 - > module load gcc
+
+
+# Setup repository
+
+> git clone https...fmp.git
+> git submodule update --init # updates thor and pangaea
+
+> git submodule foreach "uv pip install --no-build-isolation --no-deps -e ."
+
+
+
