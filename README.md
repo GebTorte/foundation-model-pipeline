@@ -38,7 +38,7 @@ OR
     > hf download nascetti-a/BioMassters --repo-type dataset
 
 ### test run
-> torchrun --nnodes=2 --nproc_per_node=1 pangea/run.py --config-name=train dataset=croptypemappi
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=croptypemappi
 ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
 
 ### test pastis TODO [ ]
