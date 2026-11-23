@@ -43,8 +43,15 @@ OR
 > torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=croptypemappi
 ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
 
+> torchrun --nnodes=1 --nproc_per_node=1 pangea/pangaea-bench/pangaea/run.py --config-name=train dataset=croptypemappi
+ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
+
+
 ### test pastis TODO [ ]
-> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=pastis encoder=remoteclip decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task.evaluator.inference_mode=whole task=segmentation
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=pastis dataset.root_path=/data/pastis encoder=remoteclip decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task.evaluator.inference_mode=whole task=segmentation
+
+### test biomassters
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters dataset.root_path=/data/biomassters encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
 
 ## THOR
 > git clone
