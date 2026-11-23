@@ -83,7 +83,7 @@ run pytest in root project directory once to test everything working
 > git clone https...fmp.git
 > git submodule update --init # updates thor and pangaea
 
-### install as packages into env
+### install as packages into env (also to update venv)
 > git submodule foreach "uv pip install --no-build-isolation --no-deps -e ."
 
 ### integrate updates from remote
