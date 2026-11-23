@@ -30,12 +30,14 @@ Project: Foundation Model Pipeline
 > cd pangea-bench
 > uv pip install --no-build-isolation --no-deps -e .
 
-### datasets
-- pastis-r: supplied automatically via pangea
+### download datasets
+Go to `/pangea/pangaea-bench/`
+- pastis-r: supplied automatically via pangaea
 OR 
-    > hf download IGNF/PASTIS-HD --repo-type dataset --local-dir ./pastisr
+    > hf download IGNF/PASTIS-HD --repo-type dataset --local-dir ./pastis
 - biomassters: supplied via Huggingface. TODO [ ] (ca. 200GB -> leave for proper )
     > hf download nascetti-a/BioMassters --repo-type dataset --local-dir ./biomassters
+
 
 ### test run
 > torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=croptypemappi
@@ -81,6 +83,7 @@ run pytest in root project directory once to test everything working
 > git clone https...fmp.git
 > git submodule update --init # updates thor and pangaea
 
+### install as packages into env
 > git submodule foreach "uv pip install --no-build-isolation --no-deps -e ."
 
 ### integrate updates from remote
