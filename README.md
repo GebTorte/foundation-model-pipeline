@@ -51,7 +51,7 @@ ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize crit
 > torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=pastis dataset.root_path=/data/pastis dataset.auto_download=false encoder=remoteclip decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task.evaluator.inference_mode=whole task=segmentation
 
 ### test biomassters
-> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters dataset.root_path=/data/biomassters encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters dataset.root_path=./data/biomassters dataset.auto_download=false encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
 
 ## THOR
 > git clone
@@ -95,6 +95,7 @@ run pytest in root project directory once to test everything working
 
 ### integrate updates from remote
 > git submodule update --recursive
+
 > git submodule foreach --recursive git fetch
 > git submodule foreach --recursive git pull origin main
 
