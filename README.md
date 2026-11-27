@@ -39,7 +39,7 @@ OR
     > hf download nascetti-a/BioMassters --repo-type dataset --local-dir ./biomassters
 
 
-### test run
+### test training
 > torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=croptypemappi
 ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
 
@@ -47,11 +47,15 @@ ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize crit
 ng encoder=ssl4eo_dino decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task=segmentation
 
 
-### test pastis TODO [ ]
+#### test pastis - runs [x]
 > torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=pastis dataset.root_path=/data/pastis dataset.auto_download=false encoder=remoteclip decoder=seg_upernet_mt_ltae preprocessing=seg_resize criterion=cross_entropy task.evaluator.inference_mode=whole task=segmentation
 
-### test biomassters
-> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters dataset.root_path=./data/biomassters dataset.auto_download=false encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
+#### test biomassters - [ ]
+> torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters dataset.root_path=./data/biomassters dataset.auto_download=true encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
+
+### test unet training [ ]
+
+## test inference
 
 ## THOR
 > git clone

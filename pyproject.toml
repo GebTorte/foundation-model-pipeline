@@ -28,3 +28,9 @@ dependencies = [
     "wandb>=0.31.0",
     "yacs>=0.1.8",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "polars>=2.2.0",
+]

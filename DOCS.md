@@ -77,3 +77,10 @@ recombine train zip and unpack afterwards
 
 recombine test zip and unpack afterwards
 > cat test_features_splits.z{01..04} test_features_splits.zip > test_features_splits_combined.zip && unzip test_features_splits_combined.zip
+
+unpack agbm
+> unzip train_adbm
+> tar xvf test_adbm.tar
+
+### mv train_features up after unzip
+mv Volumes/Samsung_T5/BIOMASS/BioMasster_Dataset/v1/DrivenData/train_features/ .
