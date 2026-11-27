@@ -15,6 +15,8 @@ Running:
 
 ```bash
 torchrun --nnodes=1 --nproc_per_node=1 pangaea/pangaea-bench/pangaea/run.py --config-name=train dataset=biomassters encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
+
+torchrun --nnodes=1 --nproc_per_node=1 pangaea/run.py --config-name=train dataset=biomassters encoder=dofa decoder=reg_upernet_mt_ltae preprocessing=reg_default criterion=mse task=regression
 ```
 
 ended with:
@@ -84,3 +86,21 @@ unpack agbm
 
 ### mv train_features up after unzip
 mv Volumes/Samsung_T5/BIOMASS/BioMasster_Dataset/v1/DrivenData/train_features/ .
+
+### create train,test,val _Data_list.csv from metadata.csv.csv
+```python
+import polars as pl
+df = pl.read_csv("The_BioMassters_-_features_metadata.csv.csv")
+train_df = df.filter(
+    pl.col("split") == "train"
+)
+test_df = df.filter(
+    pl.col("split") == "test"
+)
+
+train_df.write_csv("train_Data_list.csv")
+test_df.write_csv("test_Data_list.csv")
+
+# then move them to biomassters folder
+```
+NOTE: val has not been split yet
